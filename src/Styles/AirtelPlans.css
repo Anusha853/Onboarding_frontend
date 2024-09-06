@@ -1,0 +1,115 @@
+body {
+  background-color: #edd2b9; /* Page background color */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding-top: 60px; /* Add padding to the top to prevent content from hiding under the navbar */
+}
+
+.navbar-plans {
+  background-color: #ff5722; /* Orange color for the nav bar */
+  padding: 15px;
+  color: white;
+  text-align: center;
+  width: 100%; /* Make the navbar span full width */
+   /* Fix the navbar to the top */
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /*
+
+ /* Ensure the navbar stays on top of other content */
+}
+
+.navbar-plans ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navbar-plans li {
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.navbar-plans li:hover {
+  text-decoration: underline;
+}
+
+.plan-section1 {
+  padding: 20px;
+  margin-top: 20px; /* Add space above each section */
+}
+
+.plans-row {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to the next row */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center align the cards */
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 900px) {
+  .plans-row {
+    gap: 10px; /* Further adjust gap for medium screens */
+  }
+}
+
+.plan-card1 {
+  position: relative;
+  background-color: #000080; /* Card color: dark blue */
+  color: white; /* Text color inside the card */
+  border: 1px solid #ddd; /* Optional, you can remove it if not needed */
+  border-radius: 8px;
+  padding: 15px; /* Padding inside the card */
+  box-shadow: 0 4px 8px rgba(220, 70, 117, 0.1);
+  overflow: hidden; /* Ensure text does not overflow the card */
+  transition: max-height 0.5s ease, padding 0.5s ease; /* Smooth transition */
+  max-width: 250px; /* Set a max-width to control card size */
+  margin: 0; /* Remove margin to ensure alignment within the row */
+  text-align: center; /* Center align text */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.plan-icon {
+  width: 50px; /* Adjust the size of the icon */
+  height: 50px; /* Adjust the size of the icon */
+  margin-bottom: 10px; /* Space between icon and text */
+}
+
+.select-button {
+  color: white; /* Button text color */
+  font-size: 14px; /* Font size */
+  cursor: pointer;
+  text-align: center; /* Center align text */
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #ff5722; /* Button color */
+  padding: 8px 12px; /* Button padding */
+  border-radius: 5px;
+  border: none; /* Remove default button border */
+  display: inline-block; /* Adjust button width */
+}
+
+.plan-card1 h3{
+  font-size: 25px;
+  color: #ff5722;
+}
+
+.plan-card1 h2{
+  font-size: 25px;
+}
+
+.plan-card1 p{
+  font-size: medium;
+  font-weight: 0;
+}
+
+.plan-section1 h2{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+}

@@ -1,0 +1,36 @@
+/* HomePage styles */
+.homepage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000080;
+}
+
+.homepage-box {
+  text-align: center;
+  background-color: #fff;
+  padding: 60px;
+  margin-bottom: 60px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.homepage-box h1 {
+  color: #000080;
+  margin-bottom: 20px;
+}
+
+.signin-signup-button {
+  background-color: #FFA500;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signin-signup-button:hover {
+  background-color: #ff9400;
+}

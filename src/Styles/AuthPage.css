@@ -1,0 +1,42 @@
+.switch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000080; /* Navy blue background */
+  background-color: bisque;
+}
+
+.switch-box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+}
+
+.switch-tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.switch-tabs button {
+  flex: 1;
+  background-color: #000080;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.switch-tabs button.active-tab {
+  background-color: #FFA500; /* Orange for active tab */
+}
+
+.switch-tabs button:hover {
+  background-color: #FFA500; /* Orange on hover */
+}

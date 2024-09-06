@@ -1,0 +1,85 @@
+/* Main profile container */
+.profile-container {
+    max-width: 800px;
+    margin: 30px auto;
+    
+    border-radius: 12px;
+    background-color: bisque;
+  }
+  
+  /* Top profile details section */
+  .profile-details {
+    background-color: #000080; /* Navy blue background */
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .profile-details h2 {
+    font-size: 28px;
+    color: #ffa500; /* Orange text */
+    margin-bottom: 10px;
+  }
+  
+  .profile-details p {
+    font-size: 18px;
+    margin: 5px 0;
+    line-height: 1.6;
+  }
+  
+  /* Current plan details section */
+  .user-plan {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    text-align: left;
+  }
+  
+  .user-plan h3 {
+    font-size: 24px;
+    color: #000080; /* Navy blue */
+    margin-bottom: 15px;
+  }
+  
+  .user-plan p {
+    font-size: 18px;
+    margin: 8px 0;
+    line-height: 1.5;
+  }
+  
+  .no-plan-message {
+    color: #ff0000; /* Red text */
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  /* Style for the logout button */
+  .logout-button {
+    background-color: #ffa500; /* Orange button */
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 30px auto; /* Centers the button horizontally */
+    display: block; /* Ensures the margin auto works with block display */
+    width: 30%;
+  }
+  
+  .logout-button:hover {
+    background-color: #ff9400;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+  }
+  

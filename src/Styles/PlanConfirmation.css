@@ -1,0 +1,42 @@
+.plan-confirmation1 {
+    padding: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
+    height: 100vh;
+    
+  }
+
+  .plan-confirmation1 h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
+    font-size: 34px;
+    font-weight: bold;
+  }
+
+  .plan-confirmation1 h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
+    color: #ff5722;
+    font-size: 35px;
+  }
+ 
+  .plan-details-box1 {
+    background-color: #000080; /* Blue color */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+  }
+ 
+  .proceed-button {
+    background-color: #ff5722; /* Orange color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+ 
+  .proceed-button:hover {
+    background-color: #e64a19; /* Darker orange on hover */
+  }

@@ -1,0 +1,103 @@
+.switch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000080; /* Navy blue background */
+}
+
+/* The box that wraps both the login and register forms */
+.switch-box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+}
+
+/* Title and Tabs */
+.switch-box h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.switch-tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.switch-tabs button {
+  flex: 1;
+  background-color: #000080;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.switch-tabs button.active {
+  background-color: #FFA500; /* Orange for active tab */
+}
+
+.switch-tabs button:hover {
+  background-color: #FFA500; /* Orange on hover */
+}
+
+/* Error messages displayed at the top of each field */
+.error-text {
+  color: red;
+  font-size: 12px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+/* Input fields and select dropdown styling */
+.switch-box input, .switch-box select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Green Register button */
+.register-button {
+  background-color: #FFA500; /* Orange button */
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.register-button:hover {
+  background-color: #ff9400;
+}
+
+/* Centered text for the login link */
+.centered-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #000080;
+}
+
+.centered-text button {
+  background: none;
+  border: none;
+  color: #000080;
+  cursor: pointer;
+}
+
+.centered-text button:hover {
+  text-decoration: underline;
+}
