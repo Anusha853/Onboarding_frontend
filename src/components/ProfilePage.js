@@ -30,6 +30,7 @@ const handleSeePlans = () => {
     const fetchUserDetails = async () => {
       const username = localStorage.getItem('username');
       const password = localStorage.getItem('password');
+      const userId = localStorage.getItem('userId');
 
       if (!username || !password) {
         navigate('/login');

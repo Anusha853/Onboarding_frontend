@@ -12,24 +12,28 @@ function Plans() {
   const plans = {
     Personal: [
       {
+        id: 1,
         title: 'Social Media Enthusiast Plan',
         description: '5 GB/day for social media, Unlimited calls, 100 SMS/day',
         price: '₹299',
         validity: '60 days',
       },
       {
+        id: 3,
         title: 'Health&Fitness Plan',
         description: '50 GB/month, Unlimited calls, 100 SMS/day, Free fitness apps',
         price: '₹499',
         validity: '30 days',
       },
       {
+        id: 2,
         title: 'Gamers Paradise Plan',
         description: '100 GB/month for gaming, 500 minutes calls, 50 SMS/day',
         price: '₹799',
         validity: '90 days',
       },
       {
+        id: 4,
         title: 'Travel Lovers Plan',
         description: '10 GB/month with roaming, Unlimited calls, 100 minutes international, 100 SMS/day',
         price: '₹999',
@@ -38,24 +42,28 @@ function Plans() {
     ],
     Business: [
       {
+        id: 5,
         title: 'Startup Booster Plan',
         description: '200 GB/month, Unlimited calls, 1000 SMS/day, Free business tools',
         price: '₹2999',
         validity: '60 days',
       },
       {
+        id: 6,
         title: 'Remote Work Plan',
         description: '500 GB/month, Unlimited calls, 2000 SMS/day, Free VPN and cloud storage',
         price: '₹4999',
         validity: '90 days',
       },
       {
+        id: 7,
         title: 'Customer Engagement Plan',
         description: '1 TB/month, Unlimited calls, 5000 SMS/day, Free CRM tools.',
         price: '₹9999',
         validity: '30 days',
       },
       {
+        id: 8,
         title: 'E-commerce Plan',
         description: '2 TB/month, Unlimited calls, 10000 SMS/day, Free e-commerce tools',
         price: '₹19999',
@@ -64,24 +72,28 @@ function Plans() {
     ],
     Enterprise: [
       {
+        id: 9,
         title: 'Data-Driven Enterprise Plan',
         description: '10 TB/month, Unlimited calls, 20000 SMS/day, Free analytics tools',
         price: '₹49999',
         validity: '60 days',
       },
       {
+        id: 10,
         title: 'Global Connectivity Plan',
         description: '20 TB/month, Unlimited calls, 1000 minutes international, 50000 SMS/day',
         price: '₹99999',
         validity: '90 days',
       },
       {
+        id: 11,
         title: 'Innovation Hub Plan',
         description: '50 TB/month, Unlimited calls, 100000 SMS/day, Free R&D support',
         price: '₹199999',
         validity: '30 days',
       },
       {
+        id: 12,
         title: 'Sustainability Plan',
         description: '100 TB/month, Unlimited calls and SMS, Free sustainability consulting',
         price: '₹299999',
@@ -90,24 +102,28 @@ function Plans() {
     ],
     Government: [
       {
+        id: 13,
         title: 'Public Safety Plan',
         description: '5 TB/month, Unlimited calls, 10000 SMS/day, Priority access in emergencies',
         price: '₹29999',
         validity: '60 days',
       },
       {
+        id: 14,
         title: 'Education Plan',
         description: '10 TB/month, Unlimited calls, 20000 SMS/day, Free educational platforms.',
         price: '₹59999',
         validity: '90 days',
       },
       {
+        id: 15,
         title: 'Healthcare Plan',
         description: '20 TB/month, Unlimited calls, 50000 SMS/day, Free telemedicine services',
         price: '₹99999',
         validity: '30 days',
       },
       {
+        id: 16,
         title: 'Smart City Plan',
         description: 'Unlimited data, Unlimited calls and SMS, Free IoT solutions',
         price: '₹149999',
@@ -123,7 +139,9 @@ function Plans() {
     // Navigate to PlanConfirmation page with plan details
     if (isLoggedIn) {
       // If the user is logged in, navigate to PlanConfirmation
+      const userId = localStorage.getItem('userId');
       navigate('/plan-confirmation', { state: { plan } });
+
     } else {
       // If the user is not logged in, show a message and redirect to the AuthPage
       alert('Please register/login before selecting a plan. Redirecting...');

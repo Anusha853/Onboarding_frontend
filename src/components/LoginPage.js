@@ -25,10 +25,11 @@ const LoginPage = () => {
             const data = await response.json();
             // Handle successful login here (e.g., save token, redirect)
             localStorage.setItem('user', JSON.stringify({ name: username }));
-            alert("Success full Login")
-            console.log('Login successful:', data);
+            localStorage.setItem('userId', data.userId);
             localStorage.setItem('username', username);
             localStorage.setItem('password', password);
+            alert("Success full Login")
+            console.log('Login successful:', data);
             navigate('/');
            
            
