@@ -1,6 +1,7 @@
 import React from 'react';
 //import Navbar from './Navbar';
 import { useNavigate } from 'react-router-dom';
+import img1 from '../assets/images/img1.jpg';
 
 function Header() {
     const navigate = useNavigate(); // Initialize the navigate hook
@@ -31,7 +32,7 @@ function Header() {
                                     </div>
                                 </div>
                                 <div className="col-md-6">
-                                    <img src="https://images.pexels.com/photos/3783519/pexels-photo-3783519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Pixel Phone" className="img-cover " />
+                                    <img src={img1} alt="Pixel Phone" className="img-cover " />
                                 </div>
                             </div>
                         </div>
@@ -46,3 +47,6 @@ function Header() {
 }
 
 export default Header;
+
+
+//<img src="https://images.pexels.com/photos/3783519/pexels-photo-3783519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Pixel Phone" className="img-cover " />

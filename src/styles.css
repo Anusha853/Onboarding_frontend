@@ -5,6 +5,11 @@ body, html {
     background-color: #f4f4f9;
 }
 
+.navbar-logo {
+  height: 55px; /* Adjust the height as needed */
+  width: auto;  /* This ensures the aspect ratio remains intact */
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -36,6 +41,7 @@ body, html {
 .navbar ul li a {
     text-decoration: none;
     color: white;
+    font-size: 20px;
     font-weight: bold;
 }
 

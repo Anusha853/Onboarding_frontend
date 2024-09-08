@@ -1,6 +1,10 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import plan1 from '../assets/images/plan1.jpg';
+import plan2 from '../assets/images/plan2.jpg';
+import plan3 from '../assets/images/plan3.jpg';
+import plan4 from '../assets/images/plan4.jpg';
 
 const PlanCarousel = () => {
   const navigate = useNavigate();
@@ -20,7 +24,7 @@ const PlanCarousel = () => {
           </div>
           <img
             className="carousel-image"
-            src="https://images.pexels.com/photos/4909462/pexels-photo-4909462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            src={plan1}
             alt="First plan"
           />
         </div>
@@ -35,7 +39,7 @@ const PlanCarousel = () => {
           </div>
           <img
             className="carousel-image"
-            src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            src={plan2}
             alt="Second plan"
           />
         </div>
@@ -50,7 +54,7 @@ const PlanCarousel = () => {
           </div>
           <img
             className="carousel-image"
-            src="https://images.pexels.com/photos/5685937/pexels-photo-5685937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            src={plan3}
             alt="Third plan"
           />
         </div>
@@ -65,7 +69,7 @@ const PlanCarousel = () => {
           </div>
           <img
             className="carousel-image"
-            src="https://images.pexels.com/photos/4145153/pexels-photo-4145153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            src={plan4}
             alt="Fourth plan"
           />
         </div>
@@ -76,3 +80,9 @@ const PlanCarousel = () => {
 };
 
 export default PlanCarousel;
+
+
+//"https://images.pexels.com/photos/4909462/pexels-photo-4909462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+//"https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+//"https://images.pexels.com/photos/5685937/pexels-photo-5685937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+//"https://images.pexels.com/photos/4145153/pexels-photo-4145153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"

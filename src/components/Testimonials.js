@@ -1,4 +1,7 @@
 import React from 'react';
+import test1 from '../assets/images/test1.webp';
+import test2 from '../assets/images/test2.webp';
+import test3 from '../assets/images/test3.png';
 
 const Testimonials = () => {
   return (
@@ -7,7 +10,7 @@ const Testimonials = () => {
       <div className="testimonials d-flex justify-content-around">
         <div className="testimonial-card">
           <img
-            src="https://www.gsma.com/about-us/wp-content/uploads/2023/04/vicki-brady-450x450-1.jpg"
+            src={test1}
             alt="Customer 1"
             className="testimonial-photo"
           />
@@ -18,7 +21,7 @@ const Testimonials = () => {
         </div>
         <div className="testimonial-card">
           <img
-            src="https://www.workitdaily.com/media-library/happy-successful-professional-man-holding-a-tablet.jpg?id=25967282&width=980"
+            src={test2}
             alt="Customer 2"
             className="testimonial-photo"
           />
@@ -29,7 +32,7 @@ const Testimonials = () => {
         </div>
         <div className="testimonial-card">
           <img
-            src="https://img.freepik.com/free-photo/smiley-businesswoman-posing-outdoors-with-arms-crossed-copy-space_23-2148767055.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1725321600&semt=ais_hybrid"
+            src={test3}
             alt="Customer 3"
             className="testimonial-photo"
           />

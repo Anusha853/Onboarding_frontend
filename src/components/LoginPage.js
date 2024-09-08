@@ -26,6 +26,7 @@ const LoginPage = () => {
             // Handle successful login here (e.g., save token, redirect)
             localStorage.setItem('user', JSON.stringify({ name: username }));
             localStorage.setItem('userId', data.userId);
+            localStorage.setItem('customerType', data.customerType);
             localStorage.setItem('username', username);
             localStorage.setItem('password', password);
             alert("Success full Login")

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Styles/RegisterPage.css';
+//import { toFormData } from 'axios';
  
 function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -115,7 +116,7 @@ function RegisterPage() {
         console.log('Raw Response Text:', text);
         localStorage.setItem('username', formData.username);
         localStorage.setItem('password', formData.password);
- 
+        localStorage.setItem('customerType',customerTypeMap[formData.customerType]);
         if (response.status === 201) {
           localStorage.setItem(
             'user',
