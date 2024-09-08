@@ -37,7 +37,7 @@ function Navbar() {
                 {user ? (
                     <>
                         <span className="nav-link">Hello, {username}</span>
-                        <span><button onClick={handleLogout}>Logout</button></span>
+                        
                         <Link className="nav-link" to="/profile">
                             <i className="fas fa-user"></i> {/* Profile icon */}
                         </Link>

@@ -76,8 +76,30 @@ const handleSeePlans = () => {
             <h2>Profile Details</h2>
             <p><strong>Username:</strong> {userDetails.username}</p>
             <p><strong>Phone:</strong> {userDetails.phone}</p>
-            <p><strong>Customer Type:</strong> {customerTypeMap[userDetails.customerType]}</p>
-          </div>
+            <p>
+                <strong>Customer Type:</strong>{" "}
+                {customerTypeMap[userDetails.customerType]}
+              </p>
+
+          {/* Document Verification */}
+          <div className="verification-status">
+                {userDetails.document_verification ? (
+                  <>
+                    <p>
+                      Document Verified{" "}
+                      <span className="verification-icon">✔️</span>
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p>
+                      Document yet to be Verified{" "}
+                      <span className="verification-icon">❌</span>
+                    </p>
+                  </>
+                )}
+              </div>
+            </div>
   
           <div className="user-plan">
             <h3>Your Current Plan</h3>
@@ -91,13 +113,25 @@ const handleSeePlans = () => {
             ) : (
               <p className="no-plan-message">You currently have no active plans.</p>
             )}
+            {/* Service Activation */}
+            <div className="verification-status">
+                {userDetails.plan_name && userDetails.document_verification ? (
+                  <p className="active-service">
+                    <strong>Service is Active</strong>
+                  </p>
+                ) : (
+                  <p className="inactive-service">
+                    <strong>Service is Not Active</strong>
+                  </p>
+                )}
+              </div>
           </div>
         </>
       ) : (
         <p>No profile data available.</p>
       )}
       <div className="buttons-container">
-          <button className="logout-button" onClick={handleSeePlans}>See Plans</button>
+          <button className="see-plans-button" onClick={handleSeePlans}>See Plans</button>
           <Link to="/">
             <button className="logout-button" onClick={handleLogout}>Log out</button>
           </Link>
