@@ -1,0 +1,48 @@
+/* .App {
+    text-align: center;
+    margin: 20px;
+  } */
+  
+   input[type="file"] {
+    margin: 20px;
+  }
+  
+  .button1 {
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .docVerify{
+    height: 100vh;
+    text-align: center;
+    padding: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .response {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    
+
+  }
+   
+
+  .result-page{
+    height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 50px;
+
+
+  }

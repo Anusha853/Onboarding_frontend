@@ -32,7 +32,7 @@ function Header() {
                                     </div>
                                 </div>
                                 <div className="col-md-6">
-                                    <img src={img1} alt="Pixel Phone" className="img-cover " />
+                                    <img src={img1} alt="description" className="img-cover " />
                                 </div>
                             </div>
                         </div>

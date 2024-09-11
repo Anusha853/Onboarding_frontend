@@ -68,7 +68,7 @@ const handleSeePlans = () => {
 
   return (
     <div>
-      <Navbar/>
+      
     <div className="profile-container">
       {userDetails ? (
         <>

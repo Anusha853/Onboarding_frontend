@@ -71,12 +71,29 @@
 /* Style for the buttons container */
 .buttons-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space between See Plans and Logout buttons */
+  align-items: center; /* Vertically center buttons */
   margin-top: 20px;
+  padding: 10px 20px;
 }
 
-/* Style for the See Plans and Logout buttons */
-.see-plans-button,
+/* Style for the See Plans button (aligns to the left) */
+.see-plans-button {
+  background-color: #ffa500; /* Orange button */
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 150px;
+}
+
+.see-plans-button:hover {
+  background-color: #ff9400;
+}
+
+/* Style for the Logout button (aligns to the right) */
 .logout-button {
   background-color: #ffa500; /* Orange button */
   color: white;
@@ -85,15 +102,12 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  width: 45%;
+  width: 150px;
 }
 
-.see-plans-button:hover,
 .logout-button:hover {
   background-color: #ff9400;
 }
-
-
 /* Green for active service */
 .active-service {
   color: green;
