@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
  
 import '../Styles/LoginPage.css';
@@ -7,6 +7,11 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+  useEffect(() => {
+    setIsButtonDisabled(username.trim() === '' || password.trim() === '');
+  }, [username, password]);
  
  
  
@@ -64,7 +69,11 @@ const LoginPage = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-                <button type="submit"  className="login-button">SignIn</button>
+                <button type="submit"  className="login-button"
+                disabled={isButtonDisabled}
+                style={{ backgroundColor: isButtonDisabled ? '#d3d3d3' : '#FFA500' }}
+                >
+                  SignIn</button>
             </form>
             </div>
             </div>

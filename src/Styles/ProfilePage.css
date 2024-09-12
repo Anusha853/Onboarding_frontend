@@ -1,9 +1,11 @@
 /* Main profile container */
 .profile-container {
   max-width: 800px;
-  margin: 30px auto;
+  margin: auto; 
+  margin-top: 30px;
   border-radius: 12px;
   background-color: #f9f9f9;
+  
 }
 
 /* Top profile details section */
