@@ -1,5 +1,5 @@
 import React from 'react';
-import test1 from '../assets/images/test1.webp';
+import test1 from '../assets/images/test11.png';
 import test2 from '../assets/images/test2.webp';
 import test3 from '../assets/images/test3.png';
 
@@ -17,7 +17,7 @@ const Testimonials = () => {
           <p className="testimonial-text">
             "UniTel has completely transformed the way I connect with my loved ones. Their plans are affordable, and the service is top-notch!"
           </p>
-          <h5 className="testimonial-name">Vicki Brady</h5>
+          <h5 className="testimonial-name">Mahesh</h5>
         </div>
         <div className="testimonial-card">
           <img

@@ -1,9 +1,107 @@
-/* .App {
-    text-align: center;
-    margin: 20px;
-  } */
+.docVerify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #edd2b9;
+}
+
+.card1 {
+  background: linear-gradient(45deg, #ff5722, #ff9800);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 900px;
+  height: 70%;
+  width: 100%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card1 h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+
+}
+
+.dropbox {
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  background-color: #fafafa;
+  cursor: pointer;
+  height: 70%;
   
-   input[type="file"] {
+}
+
+.dropbox p{
+  padding: 90px;
+}
+
+.dropbox.dragging {
+  border-color: #007bff;
+  background-color: #e0f0ff;
+}
+
+.dropbox p {
+  margin: 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.fileInput {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: #000080;;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button1:hover {
+  background-color: #0056b3;
+}
+
+.response {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.response h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+  
+   /* input[type="file"] {
     margin: 20px;
   }
   
@@ -45,4 +143,4 @@
     padding: 50px;
 
 
-  }
+  } */

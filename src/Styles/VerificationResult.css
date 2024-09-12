@@ -1,0 +1,52 @@
+.result-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .result-card {
+    background: linear-gradient(#21219a, #000080);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    height: 300px;
+    max-width: 800px;
+    width: 100%;
+    padding-top: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .result-card h1 {
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .result-card p {
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 50px;
+  }
+  
+  .button-select {
+    background-color: #FFA500;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .button-select:hover {
+    background-color: #ff8c00;
+  }
+  
