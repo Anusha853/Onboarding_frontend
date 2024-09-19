@@ -1,5 +1,92 @@
+import React, {useState} from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import '../Styles/ActivatePlan.css'; // Import the CSS file for styling
+
+const ActivatePlan = () => {
+    const [showPopup, setShowPopup] = useState(false);
+    const location=useLocation();
+    // const { planId } = location.state || {};
+    const planId=localStorage.getItem('planId');
+    const navigate = useNavigate();
+
+    
+    
+    const handleActivatePlan = async () => {
+    // Logic to activate the plan goes here
+    console.log(planId);
+
+    try {
+        const userId = localStorage.getItem('userId');
+        const res = await fetch(`http://localhost:7777/user/user-plans/add?userId=${userId}&planId=${planId}`, {
+          method: 'POST',
+        });
+  
+        if (res.ok) {
+          setShowPopup(true);  // Show the popup
+        } else {
+          const errorMessage = await res.text();
+          console.error('Error activating plan:', errorMessage);
+          alert('Error activating plan. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error activating plan:', error);
+        alert('An error occurred while activating the plan.');
+      }
+  };
+  // const closePopup = () => {
+  //   setIsActivated(false);
+  //   setShowBlur(false); // Remove blur
+  //   navigate('/'); // Redirect to home or another appropriate page
+  // };
+
+  const goBackConfirm=()=>{
+    navigate(-1); 
+  }
+
+  return (
+    <div className="page-container">
+            <div className={`activate-plan-container ${showPopup ? 'blur-background' : ''}`}>
+                <div className="activation-card">
+                    <h1>Plan Activation</h1>
+                    <p>To activate your plan, click the button below.</p>
+                    <button className="activate-button" onClick={handleActivatePlan}>
+                        Activate Your Plan
+                    </button>
+                </div>
+                <button className="go-back" onClick={goBackConfirm}>
+                    Go back
+                </button>
+            </div>
+
+            {showPopup && (
+                <div className="popup-overlay">
+                    <div className="popup-content">
+                        <h2>Plan Activated!</h2>
+                        <p>Thank you! Your plan has been successfully activated.</p>
+                        <button
+                            className="close-popup-button"
+                            onClick={() => {
+                                setShowPopup(false);
+                                navigate('/');
+                            }}
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
+        </div>
+  );
+};
+
+export default ActivatePlan;
+
+
+/**/
+
+
 // ActivatePlan.js
-import React from 'react';
+/*import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import '../Styles/ActivatePlan.css'; // Import the CSS file for styling
 
@@ -7,9 +94,11 @@ const ActivatePlan = () => {
     const location=useLocation();
     // const { planId } = location.state || {};
     const planId=localStorage.getItem('planId')
-  const handleActivatePlan = async () => {
+    
+    const handleActivatePlan = async () => {
     // Logic to activate the plan goes here
     console.log(planId);
+
     try {
         const userId = localStorage.getItem('userId');
         const res = await fetch(`http://localhost:7777/user/user-plans/add?userId=${userId}&planId=${planId}`, {
@@ -50,4 +139,4 @@ const ActivatePlan = () => {
   );
 };
 
-export default ActivatePlan;
+export default ActivatePlan;*/
