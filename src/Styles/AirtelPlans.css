@@ -113,3 +113,58 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 30px;
 }
+
+.plan-card2 {
+  position: relative;
+  background-color: #000080; /* Card color: dark blue */
+  color: white; /* Text color inside the card */
+  border: 1px solid #ddd; /* Optional, you can remove it if not needed */
+  border-radius: 8px;
+  padding: 15px; /* Padding inside the card */
+  box-shadow: 0 4px 8px rgba(220, 70, 117, 0.1);
+  overflow: hidden; /* Ensure text does not overflow the card */
+  transition: max-height 0.5s ease, padding 0.5s ease; /* Smooth transition */
+  max-width: 250px; /* Set a max-width to control card size */
+  margin: 0; /* Remove margin to ensure alignment within the row */
+  text-align: center; /* Center align text */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+ 
+.plan-card2::before {
+  content: '⭐Add On';
+  position: absolute;
+  color: white; /* Text color */
+  /* Semi-transparent background for better readability */
+  border-radius: 5px; /* Rounded corners */
+  padding: 0px; /* Padding around the text */
+ 
+  font-size: 16px; /* Font size */
+  top: 10px; /* Position from the top */
+  right: 10px; /* Position from the right */
+  z-index: 1; /* Ensure it stays on top */
+}
+
+.plan-card2 h3{
+  color: #ff5722;
+}
+
+.explore-button {
+  color: white; /* Button text color */
+  font-size: 14px; /* Font size */
+  cursor: pointer;
+  text-align: center; /* Center align text */
+  position:relative;
+  bottom: 10px;
+  right: 10px;
+  background-color: #ff5722; /* Button color */
+  padding: 8px 12px; /* Button padding */
+  border-radius: 5px;
+  border: none; /* Remove default button border */
+  display: inline-block; /* Adjust button width */
+}
+.explore-more-top {
+  position: absolute;
+    top: 150px;
+    right: 10px;
+}
+ 

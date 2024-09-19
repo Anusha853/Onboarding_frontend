@@ -2,15 +2,25 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../assets/images/logo.png';
+import { isLoggedIn } from './AuthPage';
 
 function Navbar() {
     const user = JSON.parse(localStorage.getItem('user'));
     const username = user ? user.name : '';
     const navigate=useNavigate();
-    const handleLogout = () => {
-        localStorage.removeItem('user');
-        navigate('/'); // Redirect to homepage after logout
+    const handlePlansClick = () => {
+        console.log("Login"+isLoggedIn())
+        if (isLoggedIn()) {
+            navigate('/plans');  // Redirect to Plans page if logged in
+        } else {
+            navigate('/total-plans');  // Redirect to TotalPlans if not logged in
+        }
     };
+    // const handleLogout = () => {
+    //     localStorage.removeItem('user');
+    //     navigate('/'); // Redirect to homepage after logout
+    // };
+    
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark">
@@ -26,7 +36,7 @@ function Navbar() {
                         <a className="nav-link" href="./">Home</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/plans">Plans</a>
+                        <a className="nav-link" onClick={handlePlansClick}>Plans</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="/contact-us">Contact Us</a>
@@ -45,6 +55,8 @@ function Navbar() {
                 ) : (
                     <Link className="nav-link btn btn-warning sign-up-btn" to="/auth">Sign In / Sign Up</Link>
                 )}
+                {/* Log out button
+        <button className="logout-button" onClick={handleLogout}>Log out</button> */}
             </div>
         </nav>
     );

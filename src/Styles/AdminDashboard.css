@@ -1,0 +1,82 @@
+/* General Container for the Admin Dashboard */
+.admin-dashboard {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Button Group Styles */
+  .button-group {
+    margin-bottom: 20px;
+  }
+  
+  .button-group button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #007bff; /* Primary color */
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button-group button.active {
+    background-color: #0056b3; /* Darker shade for active state */
+  }
+  
+  .button-group button:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+  }
+  
+  /* Filters Section Styles */
+  .filters {
+    margin-bottom: 20px;
+  }
+  
+  .filters select {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    border: 1px solid #dee2e6; /* Light gray border */
+    padding: 8px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #f8f9fa; /* Light gray background */
+    color: #343a40; /* Darker text color */
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Slightly darker gray for rows */
+  }
+  
+  table tr:hover {
+    background-color: #e9ecef; /* Light gray background on hover */
+  }
+  
+  /* Deactivate Button Styles */
+  button.deactivate {
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #dc3545; /* Bootstrap's danger color */
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  button.deactivate:hover {
+    background-color: #c82333; /* Darker shade for hover */
+  }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../Styles/DocumentVerification.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 
 const DocumentVerification = () => {
   const [file, setFile] = useState(null);
@@ -8,6 +8,7 @@ const DocumentVerification = () => {
   const [dragging, setDragging] = useState(false);
   const navigate = useNavigate();
   const userId=localStorage.getItem('userId');
+  const planId=localStorage.getItem('planId');
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
@@ -33,21 +34,25 @@ const DocumentVerification = () => {
   const handleRemoveFile = () => {
     setFile(null); // Remove the uploaded file
   };
-  const verifyDocument = async (userId) => {
-    try {
-      const res = await fetch(`http://localhost:7777/user/document/verify?userId=${userId}`, {
-        method: 'PUT',
-      });
-      const data = await res.json();
-      console.log('Document verified:', data);
-    } catch (error) {
-      console.error('Error verifying document:', error);
-    }
-  };
+  // const verifyDocument = async (userId) => {
+  //   try {
+  //     const res = await fetch(`http://localhost:7777/user/document/verify?userId=${userId}`, {
+  //       method: 'PUT',
+  //     });
+  //     const data = await res.json();
+  //     console.log('Document verified:', data);
+  //   } catch (error) {
+  //     console.error('Error verifying document:', error);
+  //   }
+  // };
   
 
   const handleUpload = async () => {
-    if (!file || !userId) return;
+    console.log(planId);
+    if (!file) {
+      alert("Please upload a file!");
+      return;
+    }
 
     const formData = new FormData();
     formData.append('file', file);
@@ -57,21 +62,20 @@ const DocumentVerification = () => {
       const res = await fetch('http://localhost:7777/user/document/upload', {
         method: 'POST',
         body: formData,
-        headers:{
-          
-        }
+        
       });
       const data = await res.text();
       setResponse(data);
 
-      await verifyDocument(userId);
+      const verificationRes = await fetch(`http://localhost:7777/user/document/status?userId=${userId}`);
+      const isVerified = await verificationRes.json();
+
+      //await verifyDocument(userId);
 
       navigate('/result', {
         state: {
-          success: true,
-          message: 'Document uploaded and verified successfully!',
-          aadhaarNumber: data.aadhaarNumber,
-          name: data.name,
+          success: isVerified,
+          message: isVerified ? 'Document verified successfully! To activate your plan, click on Activate Plan button.' : 'Your document verification failed.! Please upload the correct document.',
         },
       });
     } catch (error) {
@@ -98,7 +102,7 @@ const DocumentVerification = () => {
           {file ? (
             <div className="fileDisplay">
               <p>File: {file.name}</p>
-              <button className="removeFile" onClick={handleRemoveFile}>❌</button>
+              <button className="removeFile" onClick={handleRemoveFile}>Remove</button>
             </div>
           ) : (
             <>
@@ -107,7 +111,7 @@ const DocumentVerification = () => {
             </>
           )}
         </div>
-        <button className="button1" onClick={handleUpload} disabled={!file}>Upload Document</button>
+        <button className="button1" onClick={handleUpload} >Upload Document</button>
         {response && (
           <div className="response">
             <h2>Server Response:</h2>

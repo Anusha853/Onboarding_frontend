@@ -48,7 +48,7 @@
 .dropbox p {
   margin: 0;
   font-size: 16px;
-  color: #666;
+  color: #686868;
 }
 
 .fileInput {
@@ -91,7 +91,36 @@ pre {
   border-radius: 5px;
 }
 
+.fileDisplay {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; This ensures space between the file name and the cross button */
+  padding: 10px;
+  background-color: #f5f5f5;
+  
+  border-radius: 5px;
+  /* margin-top: 5px; */
+}
 
+.fileDisplay p {
+  margin-right: 50px;
+  margin-left: 0px;
+  font-size: 16px;
+  color: #292727;
+}
+
+.removeFile {
+  background-color: transparent;
+  border: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #4b4bc5;
+  color: white;
+  margin-right: 100px;
+  font-weight: bold;
+  padding: 6px;
+  border-radius: 5px;
+}
 
 
 

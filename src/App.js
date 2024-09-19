@@ -16,6 +16,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PlanConfirmation from './components/PlanConfirmation';
 import ProfilePage from './components/ProfilePage';
 import ChooseUs from './components/ChooseUs';
+import ActivatePlan from './components/ActivatePlan';
+import AdminDashboard from './components/AdminDashboard';
+import TotalPlans from './components/TotalPlans';
 //import Navbar from './components/Navbar';
 
 function App() {
@@ -43,10 +46,15 @@ function App() {
           <Route path="/auth" element={<AuthPage />} />
           {/* Plans Route */}
           <Route path="/plans" element={<Plans />} /> {/* Add this line */}
+          <Route path="/total-plans" element={<TotalPlans/>} />
           <Route path="/plan-confirmation" element={<PlanConfirmation />} />
           <Route path="/doc-verify" element={<DocumentVerification/>} />
+          <Route path='/activate-plan' element={<ActivatePlan />} />
           <Route path="/result" element={<VerificationResult/>} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
+
+          
 
         </Routes>
       </div>

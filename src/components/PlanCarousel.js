@@ -10,7 +10,7 @@ const PlanCarousel = () => {
   const navigate = useNavigate();
 
   const handleGetPlan=(categoryId)=>{
-    navigate(`/plans?category=${categoryId}`);
+    navigate(`/total-plans?category=${categoryId}`);
   }
   return (
     <Carousel className="plan-carousel-container">
@@ -18,9 +18,9 @@ const PlanCarousel = () => {
       <Carousel.Item>
         <div className="carousel-item-container">
           <div className="carousel-text">
-            <h3>Travel Lover's Plan</h3>
+            <h3>Adventure Enthusiast Plan</h3>
             <p>10GB data, 100 minutes international and more. Only Rs.999/month.</p>
-            <button className="btn btn-primary" onClick={() => handleGetPlan('Personal')}>See More Plans</button>
+            <button className="btn btn-primary" onClick={() => handleGetPlan('Personal Plans')}>See More Plans</button>
           </div>
           <img
             className="carousel-image"
@@ -35,7 +35,7 @@ const PlanCarousel = () => {
           <div className="carousel-text">
             <h3>Startup Booster Plan</h3>
             <p>200GB data, Free Business Tools and more. Only Rs.2999/month.</p>
-            <button className="btn btn-primary" onClick={() => handleGetPlan('Business')}>See More Plans</button>
+            <button className="btn btn-primary" onClick={() => handleGetPlan('Business Plans')}>See More Plans</button>
           </div>
           <img
             className="carousel-image"
@@ -50,7 +50,7 @@ const PlanCarousel = () => {
           <div className="carousel-text">
             <h3>Innovation Hub Plan</h3>
             <p>50TB data, Free R&D support and more. Only Rs.199999/month.</p>
-            <button className="btn btn-primary" onClick={() => handleGetPlan('Enterprise')}>See More Plans</button>
+            <button className="btn btn-primary" onClick={() => handleGetPlan('Enterprise Plans')}>See More Plans</button>
           </div>
           <img
             className="carousel-image"
@@ -65,7 +65,7 @@ const PlanCarousel = () => {
           <div className="carousel-text">
             <h3>Education Plan</h3>
             <p>10TB data, free Educational platforms and more. Only Rs.59999/month.</p>
-            <button className="btn btn-primary" onClick={() => handleGetPlan('Government')}>See More Plans</button>
+            <button className="btn btn-primary" onClick={() => handleGetPlan('Government Plans')}>See More Plans</button>
           </div>
           <img
             className="carousel-image"
