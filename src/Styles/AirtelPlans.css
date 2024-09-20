@@ -1,6 +1,7 @@
-body {
+html, body {
   background-color: #edd2b9; /* Page background color */
   margin: 0;
+  height: 100%;
   font-family: Arial, sans-serif;
   padding-top: 60px; /* Add padding to the top to prevent content from hiding under the navbar */
 }

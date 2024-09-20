@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import axios from "axios";
 import '../Styles/ActivatePlan.css'; // Import the CSS file for styling
 
 const ActivatePlan = () => {
@@ -8,15 +9,49 @@ const ActivatePlan = () => {
     // const { planId } = location.state || {};
     const planId=localStorage.getItem('planId');
     const navigate = useNavigate();
+    const [userDetails, setUserDetails] = useState(null);
+  const [error, setError] = useState(null);
 
-    
+    useEffect(() => {
+      const fetchUserDetails = async () => {
+        const username = localStorage.getItem("username");
+        const password = localStorage.getItem("password");
+        console.log(username);
+        console.log(password);
+   
+        try {
+          const response = await axios.post(
+            "http://localhost:7777/user/profile",
+            {
+              username,
+              password,
+            }
+          );
+   
+          if (response.status === 200) {
+            setUserDetails(response.data);
+            console.log(userDetails);
+            localStorage.setItem("userId", userDetails.userId);
+            
+            //console.log(userDetails.userId);
+          } else {
+            setError("Failed to retrieve user details");
+          }
+        } catch (err) {
+          setError("Error occurred while fetching data");
+        } finally {
+        }
+      };
+   
+      fetchUserDetails();
+    }, []);
     
     const handleActivatePlan = async () => {
     // Logic to activate the plan goes here
     console.log(planId);
 
     try {
-        const userId = localStorage.getItem('userId');
+        const userId = userDetails.userId;
         const res = await fetch(`http://localhost:7777/user/user-plans/add?userId=${userId}&planId=${planId}`, {
           method: 'POST',
         });

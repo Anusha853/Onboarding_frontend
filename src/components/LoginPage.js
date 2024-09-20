@@ -23,7 +23,8 @@ const LoginPage = () => {
         // Check if username and password are both "admin"
           if (username === 'admin' && password === 'admin') {
             // Redirect to AdminDashboard
-            navigate('/admin-dashboard');
+            window.location.href = 'http://localhost:3001'; // Admin app URL
+            return;
             // localStorage.setItem('user', JSON.stringify({ name: username }));
             // localStorage.setItem('username', 'admin');
             // return;

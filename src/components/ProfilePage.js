@@ -298,54 +298,93 @@ function ProfilePage() {
   return (
     <div>
       {/* Apply blur effect only to this main content */}
-      <div className={`profile-container ${otpPopupVisible || passwordPopupVisible ? "blurred" : ""}`}>
+      <div
+        className={`profile-container ${
+          otpPopupVisible || passwordPopupVisible ? "blurred" : ""
+        }`}
+      >
         {userDetails ? (
           <>
             <div className="profile-details">
               <div className="personal-details-left">
                 <h2>Profile Details</h2>
-                <p><strong>Username:</strong> {userDetails.username}</p>
-                <p><strong>Phone:</strong> {userDetails.phone}</p>
-                <p><strong>Customer Type:</strong> {customerTypeMap[userDetails.customerType]}</p>
+                <p>
+                  <strong>Username:</strong> {userDetails.username}
+                </p>
+                <p>
+                  <strong>Phone:</strong> {userDetails.phone}
+                </p>
+                <p>
+                  <strong>Customer Type:</strong>{" "}
+                  {customerTypeMap[userDetails.customerType]}
+                </p>
               </div>
               <div className="personal-details-right">
                 {/* Document Verification */}
                 <div className="verification-status">
                   {userDetails.documentVerification ? (
-                    <p>Document Verified <span className="verification-icon">✔️</span></p>
+                    <p>
+                      Document Verified{" "}
+                      <span className="verification-icon">✔️</span>
+                    </p>
                   ) : (
-                    <p>Document yet to be Verified <span className="verification-icon">❌</span></p>
+                    <p>
+                      Document yet to be Verified{" "}
+                      <span className="verification-icon">❌</span>
+                    </p>
                   )}
                 </div>
               </div>
               {/* Update Password Button */}
-              <button className="update-password-button" onClick={handleUpdatePassword}>Update Password</button>
+              <button
+                className="update-password-button"
+                onClick={handleUpdatePassword}
+              >
+                Update Password
+              </button>
             </div>
- 
+
             {/* Plans Section */}
             <div className="user-plan">
               <div className="plans-header">
                 <h3>Your Current Plans</h3>
-                <div className="service-action">
-                  {userDetails.plans && userDetails.plans.length>0 && userDetails.documentVerification ? (
-                    <p className="active-service"><strong>Service is Active</strong></p>
-                  ) : (
-                    <p className="inactive-service"><strong>Service is Not Active</strong></p>
-                  )}
-                </div>
+                {/* General service action is no longer needed here since we're adding it per plan */}
               </div>
               <div className="plans-grid">
                 {userDetails.plans && userDetails.plans.length > 0 ? (
                   userDetails.plans.map((plan, index) => (
                     <div key={index} className="plan-container">
-                      <p><strong>Plan Name:</strong> {plan.planName}</p>
-                      <p><strong>Description:</strong> {plan.planDescription}</p>
-                      <p><strong>Price:</strong> ${plan.price}</p>
-                      <p><strong>Validity:</strong> {plan.validityDays} days</p>
+                      <p>
+                        <strong>Plan Name:</strong> {plan.planName}
+                      </p>
+                      <p>
+                        <strong>Description:</strong> {plan.planDescription}
+                      </p>
+                      <p>
+                        <strong>Price:</strong> ${plan.price}
+                      </p>
+                      <p>
+                        <strong>Validity:</strong> {plan.validityDays} days
+                      </p>
+
+                      {/* Display activation status for each plan */}
+                      <div className="service-action">
+                        {plan.activation  ? (
+                          <p className="active-service">
+                            <strong>Currently Active</strong>
+                          </p>
+                        ) : (
+                          <p className="inactive-service">
+                            <strong>Currently Deactive</strong>
+                          </p>
+                        )}
+                      </div>
                     </div>
                   ))
                 ) : (
-                  <p className="no-plan-message">You currently have no active plans.</p>
+                  <p className="no-plan-message">
+                    You currently have no active plans.
+                  </p>
                 )}
               </div>
             </div>
@@ -354,9 +393,11 @@ function ProfilePage() {
           <p>No profile data available.</p>
         )}
         {/* Log out button */}
-        <button className="logout-button" onClick={handleLogout}>Log out</button>
+        <button className="logout-button" onClick={handleLogout}>
+          Log out
+        </button>
       </div>
- 
+
       {/* OTP Popup */}
       {otpPopupVisible && (
         <div className="popup">
@@ -373,7 +414,7 @@ function ProfilePage() {
           </div>
         </div>
       )}
- 
+
       {/* Password Update Popup */}
       {passwordPopupVisible && (
         <div className="popup">

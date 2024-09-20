@@ -50,3 +50,13 @@
     background-color: #ff8c00;
   }
   
+  .verify-result-container.blur-background {
+    filter: blur(8px);
+  }
+
+  .popup-content h1 {
+    color: black;
+  }
+  .popup-content p{
+    color: black; 
+  }

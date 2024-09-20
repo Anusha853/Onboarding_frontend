@@ -1,17 +1,18 @@
 /* ActivatePlan.css */
 .activate-plan-container {
     
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     padding: 20px;
   }
   
   .activation-card {
-    width: 100%;
+    width: 60%;
     max-width: 1500px;
     padding: 40px;
-    background-color: white;
+    /* background-color: white; */
+    background: linear-gradient(  #e79a25, #df7454);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
@@ -19,23 +20,25 @@
     max-height: 300px;
     height: 100%;
     margin-top: 100px;
+    margin-left: 250px;
+    
   }
   
   .activation-card h1 {
     margin-top: 10px;
     font-size: 3rem;
     margin-bottom: 20px;
-    color: #333;
+    color: rgb(21, 21, 21)
   }
   
   .activation-card p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: #555;
+    color: #333
   }
   
   .activate-button {
-    background-color: #007bff;
+    background-color: #063363;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -46,14 +49,14 @@
   }
   
   .activate-button:hover {
-    background-color: #0056b3;
+    background-color: #08aa2b;
   }
 
   .go-back{
-    background-color: #007bff;
+    background-color: #033469;
     color: white;
     border: none;
-    margin-left: 3px;
+    margin-left: 253px;
     margin-top: 10px;
     padding: 12px 24px;
     font-size: 1.1rem;
@@ -64,7 +67,7 @@
 
   }
   .go-back:hover {
-    background-color: #0056b3;
+    background-color: #b39500;
   }
   
   .popup-overlay {
@@ -78,6 +81,7 @@
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    backdrop-filter: blur(8px);
     animation: fadeIn 0.5s ease-in;
   }
   
@@ -89,7 +93,11 @@
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     animation: popupAppear 0.6s ease-out;
     z-index: 10000;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
+
+
   
   .close-popup-button {
     padding: 10px 20px;
