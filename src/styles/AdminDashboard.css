@@ -1,0 +1,154 @@
+/* General Container for the Admin Dashboard */
+html, body {
+    background-color: #edd2b9;
+    height: 100%;
+    margin: 0;
+}
+.admin-dashboard {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #edd2b9;
+    height: 100vh;
+  }
+  
+  /* Button Group Styles */
+  .button-group {
+    margin-bottom: 20px;
+  }
+  
+  .button-group button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #007bff; /* Primary color */
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button-group button.active {
+    background-color: #0056b3; /* Darker shade for active state */
+  }
+  
+  .button-group button:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+  }
+  
+  /* Filters Section Styles */
+  .filters {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+  .filters select {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    border: 1px solid #dee2e6; /* Light gray border */
+    padding: 8px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #f8f9fa; /* Light gray background */
+    color: #343a40; /* Darker text color */
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Slightly darker gray for rows */
+  }
+  
+  table tr:hover {
+    background-color: #e9ecef; /* Light gray background on hover */
+  }
+  
+  /* Deactivate Button Styles */
+  button.deactivate {
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #dc3545; /* Bootstrap's danger color */
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  button.deactivate:hover {
+    background-color: #c82333; /* Darker shade for hover */
+  }
+
+
+  /* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+  
+  .logout-button {
+    background-color: #ffa500; /* Orange */
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    
+}
+   
+  .logout-button:hover {
+    background-color: #ff9400;
+  }

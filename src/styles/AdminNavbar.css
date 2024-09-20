@@ -1,0 +1,52 @@
+.admin-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: #000080;
+  }
+  
+  .logo img {
+    height: 55px; /* Adjust the height as needed */
+    width: auto;
+  }
+  
+  .admin-greeting {
+    display: flex;
+    align-items: center;
+    color: white;
+    
+  }
+  .admin-greeting span {
+    margin: 10px;
+    
+  }
+
+  .admin-greeting .blue-tick {
+    margin-left: 3px;
+    color: #1eef2c; /* Blue color for tick */
+    font-size: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+  
+.admin-greeting .fa-user {
+    margin-left: 10px;
+    font-size: 25px;
+}
+  
+  .admin-greeting img {
+    margin-left: 10px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  
+  .admin-nav-options button{
+    color: white;
+    background-color: #000080;
+    border: none;
+    font-size: 20px;
+    margin-left: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
