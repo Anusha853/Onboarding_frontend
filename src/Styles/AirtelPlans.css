@@ -43,6 +43,7 @@ html, body {
 .plan-section1 {
   padding: 20px;
   margin-top: 20px; /* Add space above each section */
+  
 }
 
 .plans-row {
@@ -73,6 +74,15 @@ html, body {
   margin: 0; /* Remove margin to ensure alignment within the row */
   text-align: center; /* Center align text */
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+}
+
+.plan-card1:hover{
+  transform: translateY(-10px);
+}
+
+.plan-card2:hover{
+  transform: translateY(-10px);
 }
 
 .plan-icon {
@@ -129,6 +139,10 @@ html, body {
   margin: 0; /* Remove margin to ensure alignment within the row */
   text-align: center; /* Center align text */
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.plan-card2 h2{
+  font-size: 25px;
 }
  
 .plan-card2::before {

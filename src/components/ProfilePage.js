@@ -185,9 +185,9 @@ function ProfilePage() {
     navigate("/");
   };
  
-  const handleSeePlans = () => {
-    navigate("/plans");
-  };
+  // const handleSeePlans = () => {
+  //   navigate("/plans");
+  // };
   const customerTypeMap = {
     1: 'Personal',
     2: 'Business',
@@ -361,7 +361,7 @@ function ProfilePage() {
                         <strong>Description:</strong> {plan.planDescription}
                       </p>
                       <p>
-                        <strong>Price:</strong> ${plan.price}
+                        <strong>Price:</strong> ₹{plan.price}
                       </p>
                       <p>
                         <strong>Validity:</strong> {plan.validityDays} days

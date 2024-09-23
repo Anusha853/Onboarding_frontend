@@ -1,6 +1,6 @@
 import React, {useEffect, useState } from 'react';
 import '../Styles/DocumentVerification.css';
-import { useNavigate,useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 const DocumentVerification = () => {

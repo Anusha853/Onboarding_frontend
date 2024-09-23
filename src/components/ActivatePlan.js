@@ -18,6 +18,7 @@ const ActivatePlan = () => {
         const password = localStorage.getItem("password");
         console.log(username);
         console.log(password);
+        
    
         try {
           const response = await axios.post(
@@ -52,6 +53,7 @@ const ActivatePlan = () => {
 
     try {
         const userId = userDetails.userId;
+        
         const res = await fetch(`http://localhost:7777/user/user-plans/add?userId=${userId}&planId=${planId}`, {
           method: 'POST',
         });

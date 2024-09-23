@@ -8,7 +8,7 @@ function TotalPlans() {
  
   const [customerType, setCustomerType] = useState(null);
   const [plans, setPlans] = useState([]);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  //const [isLoggedIn, setIsLoggedIn] = useState(false);
  
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);

@@ -19,8 +19,10 @@ const PlanConfirmation = () => {
   const [isVerified, setIsVerified] = useState(null);
 
   // const { id, title, price, description, validity } = plan;
-  localStorage.setItem('planId', plan.plan_id);
+  localStorage.setItem('planId', plan.planId);
   const planId=localStorage.getItem('planId');
+  console.log(plan);
+  console.log(planId);
 
   useEffect(() => {
     const fetchUserDetails = async () => {
