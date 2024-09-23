@@ -1,7 +1,7 @@
 /* ActivatePlan.css */
 .activate-plan-container {
-    
-    justify-content: center;
+    display: flex;
+    /* justify-content: center; */
     align-items: center;
     height: 100vh;
     padding: 20px;
@@ -11,13 +11,13 @@
     width: 60%;
     max-width: 1500px;
     padding: 40px;
-    /* background-color: white; */
-    background: linear-gradient(  #e79a25, #e05227);
+    background: linear-gradient(45deg, #ff5722, #ff9800);
+    /*background: linear-gradient(  #e79a25, #e05227);*/
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    max-height: 300px;
+    max-height: 350px;
     height: 100%;
     margin-top: 100px;
     margin-left: 250px;
@@ -28,16 +28,26 @@
     margin-top: 10px;
     font-size: 3rem;
     margin-bottom: 20px;
-    color: rgb(21, 21, 21)
+    color: #063363;
+    text-align: center;
   }
   
   .activation-card p {
     font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #333
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+    
   }
-  
-  .activate-button {
+
+  .button-container {
+    display: flex;
+    justify-content: space-between; /* Buttons on opposite sides */
+    margin-top: 20px;
+}
+
+/* Styling for the activate button */
+.activate-button {
     background-color: #063363;
     color: white;
     border: none;
@@ -46,30 +56,33 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  .activate-button:hover {
-    background-color: #08aa2b;
-  }
+}
 
-  .go-back{
+/* Hover effect for activate button */
+.activate-button:hover {
+    background-color: #08aa2b;
+}
+
+/* Styling for the go-back button */
+.go-back {
     background-color: #033469;
     color: white;
     border: none;
-    margin-left: 253px;
-    margin-top: 10px;
     padding: 12px 24px;
     font-size: 1.1rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
-  }
-  .go-back:hover {
-    background-color: #b39500;
-  }
-  
+/* Hover effect for go-back button */
+.go-back:hover {
+    background-color: #d01111;
+}
+
+/* Rest of your CSS for other elements */
+
   .popup-overlay {
     position: fixed;
     top: 0;

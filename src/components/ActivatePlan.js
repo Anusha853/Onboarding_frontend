@@ -85,14 +85,20 @@ const ActivatePlan = () => {
             <div className={`activate-plan-container ${showPopup ? 'blur-background' : ''}`}>
                 <div className="activation-card">
                     <h1>Plan Activation</h1>
+                    <p>Your document is already verified!</p>
                     <p>To activate your plan, click the button below.</p>
+                    <div class="button-container">
+                    <button className="go-back" onClick={goBackConfirm}>
+                        Go back
+                    </button>
                     <button className="activate-button" onClick={handleActivatePlan}>
                         Activate Your Plan
                     </button>
+                    
+                    </div>
                 </div>
-                <button className="go-back" onClick={goBackConfirm}>
-                    Go back
-                </button>
+
+                
             </div>
 
             {showPopup && (

@@ -15,9 +15,9 @@ const Testimonials = () => {
             className="testimonial-photo"
           />
           <p className="testimonial-text">
-            "UniTel has completely transformed the way I connect with my loved ones. Their plans are affordable, and the service is top-notch!"
+            "UniTel has completely transformed the way I connect with my loved ones. Their service is top-notch!"
           </p>
-          <h5 className="testimonial-name">Mahesh</h5>
+          <h5 className="testimonial-name">Fernandez</h5>
         </div>
         <div className="testimonial-card">
           <img
@@ -37,7 +37,7 @@ const Testimonials = () => {
             className="testimonial-photo"
           />
           <p className="testimonial-text">
-            "I love the flexibility and features of UniTel's plans. It's perfect for my busy lifestyle."
+            "I love the flexibility and features of UniTel's plans. It's perfect for my busy lifestyle and they come with the best plans."
           </p>
           <h5 className="testimonial-name">Emily Johnson</h5>
         </div>
