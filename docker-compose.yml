@@ -1,7 +1,7 @@
 services:
   frontend:
     build:
-      context: ./frontend  # Path to your frontend folder
+      context: C:/ProjectUI/frontend  # Path to your frontend folder
       dockerfile: Dockerfile
     ports:
       - "3000:80"  # Exposing port 3000 on the host to port 80 in the container
