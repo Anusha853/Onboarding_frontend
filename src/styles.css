@@ -173,8 +173,9 @@ body, html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     height: 400px; /* Adjust card height as needed */
     overflow: hidden;
-    width: 1230px; /* Ensure the card occupies full width of the column */
+    width: 100%; /* Ensure the card occupies full width of the column */
     background: linear-gradient(45deg, #ff5722, #ff9800);
+    
   }
 
   .card-title{
@@ -191,7 +192,7 @@ body, html {
 
   
   .img-cover {
-    height: 100%; /* Ensure the image covers the full height of the card */
+    height: auto; /* Ensure the image covers the full height of the card */
     width: 100%;
     object-fit: cover; /* Ensure the image covers the area without distortion */
   }

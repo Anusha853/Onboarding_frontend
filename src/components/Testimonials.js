@@ -17,7 +17,7 @@ const Testimonials = () => {
           <p className="testimonial-text">
             "UniTel has completely transformed the way I connect with my loved ones. Their service is top-notch!"
           </p>
-          <h5 className="testimonial-name">Fernandez</h5>
+          <h5 className="testimonial-name">Vanshika</h5>
         </div>
         <div className="testimonial-card">
           <img

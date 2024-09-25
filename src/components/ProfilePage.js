@@ -163,12 +163,11 @@ export default ProfilePage;
 //     alert("Failed to send OTP");
 //   }
 // };
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../Styles/ProfilePage.css";
- 
+
 function ProfilePage() {
   const [userDetails, setUserDetails] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -179,40 +178,40 @@ function ProfilePage() {
   const [otpPopupVisible, setOtpPopupVisible] = useState(false);
   const [passwordPopupVisible, setPasswordPopupVisible] = useState(false);
   const navigate = useNavigate();
- 
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+  useEffect(() => {
+    setIsButtonDisabled(password.trim() === '' || confirmPassword.trim() === '');
+  }, [password, confirmPassword]);
+
   const handleLogout = () => {
     localStorage.removeItem("user");
     navigate("/");
   };
- 
-  // const handleSeePlans = () => {
-  //   navigate("/plans");
-  // };
+
   const customerTypeMap = {
     1: 'Personal',
     2: 'Business',
     3: 'Enterprise',
     4: 'Government',
   };
+
   const handleUpdatePassword = async () => {
-      console.log("in otp");
-      setOtpPopupVisible(true); // Show OTP popup
-      // Call API to send OTP
-      try {
-        const response = await axios.post(
-          "http://localhost:7777/user/update-password",
-          { username: userDetails.username } // Send the username instead of email
-        );
-        if (response.status === 200) {
-          alert("OTP has been sent to your email");
-        }
-      } catch (error) {
-        alert("Failed to send OTP");
+    setOtpPopupVisible(true); // Show OTP popup
+    try {
+      const response = await axios.post(
+        "http://localhost:7777/user/update-password",
+        { username: userDetails.username } // Send the username instead of email
+      );
+      if (response.status === 200) {
+        alert("OTP has been sent to your email");
       }
-    };
- 
+    } catch (error) {
+      alert("Failed to send OTP");
+    }
+  };
+
   const handleOtpVerification = async () => {
-    // Verify OTP
     try {
       const response = await axios.post(
         "http://localhost:7777/user/verify",
@@ -228,13 +227,27 @@ function ProfilePage() {
       alert("Error during OTP verification");
     }
   };
- 
+
+  // Password validation function
+  const validatePassword = (password) => {
+    // Regex to check for a password 8-10 characters long with at least one special char and one number
+    const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,10})/;
+    return passwordRegex.test(password);
+  };
+
   const handlePasswordUpdate = async () => {
+    // Check if passwords match
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
- 
+
+    // Validate password complexity
+    if (!validatePassword(password)) {
+      alert("Password must be 8-15 characters long, include letters, numbers, and special characters.");
+      return;
+    }
+
     // Update password
     try {
       const response = await axios.post(
@@ -242,7 +255,6 @@ function ProfilePage() {
         { username: userDetails.username, newPassword: password }
       );
       if (response.status === 200) {
-      console.log(password);
         alert("Password updated successfully");
         setPasswordPopupVisible(false); // Close password popup
       } else {
@@ -252,26 +264,22 @@ function ProfilePage() {
       alert("Error during password update");
     }
   };
- 
+
   useEffect(() => {
     const fetchUserDetails = async () => {
       const username = localStorage.getItem("username");
       const password = localStorage.getItem("password");
- 
+
       if (!username || !password) {
         navigate("/login");
         return;
       }
- 
+
       try {
         const response = await axios.post(
           "http://localhost:7777/user/profile",
-          {
-            username,
-            password,
-          }
+          { username, password }
         );
- 
         if (response.status === 200) {
           setUserDetails(response.data);
         } else {
@@ -283,63 +291,40 @@ function ProfilePage() {
         setLoading(false);
       }
     };
- 
+
     fetchUserDetails();
   }, [navigate]);
- 
+
   if (loading) {
     return <p>Loading...</p>;
   }
- 
+
   if (error) {
     return <p>{error}</p>;
   }
- 
+
   return (
     <div>
-      {/* Apply blur effect only to this main content */}
-      <div
-        className={`profile-container ${
-          otpPopupVisible || passwordPopupVisible ? "blurred" : ""
-        }`}
-      >
+      <div className={`profile-container ${otpPopupVisible || passwordPopupVisible ? "blurred" : ""}`}>
         {userDetails ? (
           <>
             <div className="profile-details">
               <div className="personal-details-left">
                 <h2>Profile Details</h2>
-                <p>
-                  <strong>Username:</strong> {userDetails.username}
-                </p>
-                <p>
-                  <strong>Phone:</strong> {userDetails.phone}
-                </p>
-                <p>
-                  <strong>Customer Type:</strong>{" "}
-                  {customerTypeMap[userDetails.customerType]}
-                </p>
+                <p><strong>Username:</strong> {userDetails.username}</p>
+                <p><strong>Phone:</strong> {userDetails.phone}</p>
+                <p><strong>Customer Type:</strong> {customerTypeMap[userDetails.customerType]}</p>
               </div>
               <div className="personal-details-right">
-                {/* Document Verification */}
                 <div className="verification-status">
                   {userDetails.documentVerification ? (
-                    <p>
-                      Document Verified{" "}
-                      <span className="verification-icon">✔️</span>
-                    </p>
+                    <p>Document Verified <span className="verification-icon">✔️</span></p>
                   ) : (
-                    <p>
-                      Document yet to be Verified{" "}
-                      <span className="verification-icon">❌</span>
-                    </p>
+                    <p>Document yet to be Verified <span className="verification-icon">❌</span></p>
                   )}
                 </div>
               </div>
-              {/* Update Password Button */}
-              <button
-                className="update-password-button"
-                onClick={handleUpdatePassword}
-              >
+              <button className="update-password-button" onClick={handleUpdatePassword}>
                 Update Password
               </button>
             </div>
@@ -348,43 +333,26 @@ function ProfilePage() {
             <div className="user-plan">
               <div className="plans-header">
                 <h3>Your Current Plans</h3>
-                {/* General service action is no longer needed here since we're adding it per plan */}
               </div>
               <div className="plans-grid">
                 {userDetails.plans && userDetails.plans.length > 0 ? (
                   userDetails.plans.map((plan, index) => (
                     <div key={index} className="plan-container">
-                      <p>
-                        <strong>Plan Name:</strong> {plan.planName}
-                      </p>
-                      <p>
-                        <strong>Description:</strong> {plan.planDescription}
-                      </p>
-                      <p>
-                        <strong>Price:</strong> ₹{plan.price}
-                      </p>
-                      <p>
-                        <strong>Validity:</strong> {plan.validityDays} days
-                      </p>
-
-                      {/* Display activation status for each plan */}
+                      <p><strong>Plan Name:</strong> {plan.planName}</p>
+                      <p><strong>Description:</strong> {plan.planDescription}</p>
+                      <p><strong>Price:</strong> ₹{plan.price}</p>
+                      <p><strong>Validity:</strong> {plan.validityDays} days</p>
                       <div className="service-action">
-                        {plan.activation  ? (
-                          <p className="active-service">
-                            <strong>Currently Active</strong>
-                          </p>
+                        {plan.activation ? (
+                          <p className="active-service"><strong>Currently Active</strong></p>
                         ) : (
-                          <p className="inactive-service">
-                            <strong>Currently Deactive</strong>
-                          </p>
+                          <p className="inactive-service"><strong>Currently Deactive</strong></p>
                         )}
                       </div>
                     </div>
                   ))
                 ) : (
-                  <p className="no-plan-message">
-                    You currently have no active plans.
-                  </p>
+                  <p className="no-plan-message">You currently have no active plans.</p>
                 )}
               </div>
             </div>
@@ -392,10 +360,7 @@ function ProfilePage() {
         ) : (
           <p>No profile data available.</p>
         )}
-        {/* Log out button */}
-        <button className="logout-button" onClick={handleLogout}>
-          Log out
-        </button>
+        <button className="logout-button" onClick={handleLogout}>Log out</button>
       </div>
 
       {/* OTP Popup */}
@@ -432,13 +397,18 @@ function ProfilePage() {
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Confirm Password"
             />
-            <button onClick={handlePasswordUpdate}>Update Password</button>
+            <button
+              disabled={isButtonDisabled}
+              style={{ backgroundColor: isButtonDisabled ? '#d3d3d3' : '#FFA500' }}
+              onClick={handlePasswordUpdate}
+            >
+              Update Password
+            </button>
           </div>
         </div>
       )}
     </div>
   );
 }
- 
+
 export default ProfilePage;
- 

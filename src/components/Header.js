@@ -15,8 +15,8 @@ function Header() {
         <header className="header text-white text-center">
             
             <div className="container-fluid">
-                <div className="row ">
-                    <div className="col-lg-10 col-xl-8">
+                <div className="row">
+                    <div className="col-lg-12 col-xl-12">
                         <div className="card">
                             <div className="row g-0">
                                 <div className="col-md-6 d-flex flex-column justify-content-center">
