@@ -23,13 +23,17 @@ const LoginPage = () => {
         // Check if username and password are both "admin"
           if (username === 'admin' && password === 'admin') {
             // Redirect to AdminDashboard
-            window.location.href = 'http://localhost:3001'; // Admin app URL
+            window.location.href = process.env.REACT_APP_ADMIN_URL;
+          // Admin app URL
             return;
             // localStorage.setItem('user', JSON.stringify({ name: username }));
             // localStorage.setItem('username', 'admin');
             // return;
           }
-          const response = await fetch(`http://localhost:7777/user/login?username=${username}&password=${password}`, {
+          const apiUrl = process.env.REACT_APP_BASE_URL;
+          console.log("Base URL:", apiUrl);
+
+          const response = await fetch(`${apiUrl}/user/login?username=${username}&password=${password}`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -94,85 +98,3 @@ const LoginPage = () => {
  
 export default LoginPage;
 
-/*
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
-import '../Styles/LoginPage.css';
-
-const LoginPage = () => {
-  const navigate = useNavigate();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleInputChange = async (e) => {
-    e.preventDefault();
-  
-    // Check if username and password are both "admin"
-    if (username === 'admin' && password === 'admin') {
-      // Redirect to AdminDashboard
-      navigate('/admin-dashboard');
-      return;
-    }
-  
-    // Handle login for other users
-    try {
-      const response = await fetch('http://localhost:7777/user/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
-  
-      // Check if response is OK
-      if (response.ok) {
-        const data = await response.json();
-        // Handle successful login here (e.g., save token, redirect)
-        localStorage.setItem('user', JSON.stringify({ name: username }));
-        alert("Successful Login");
-        console.log('Login successful:', data);
-        localStorage.setItem('username', username);
-        localStorage.setItem('password', password);
-        navigate('/'); // Redirect to home page or another route
-      } else {
-        // If not OK, log the response status and error
-        const errorData = await response.json();
-        console.error('Login failed:', response.status, errorData);
-        alert(`Login failed: ${errorData.message || 'Invalid credentials'}`);
-      }
-    } catch (error) {
-      console.error('Error during login request:', error);
-      alert("An error occurred during login.");
-    }
-  };
-  
-
-  return (
-    <div className="login-container">
-      <div className="login-box">
-        <form onSubmit={handleInputChange}>
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit" className="login-button">Sign In</button>
-        </form>
-      </div>
-    </div>
-  );
-};
-
-export default LoginPage;*/

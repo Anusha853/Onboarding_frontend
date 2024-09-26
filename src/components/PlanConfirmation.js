@@ -32,8 +32,9 @@ const PlanConfirmation = () => {
       console.log(password);
  
       try {
+        const apiUrl = process.env.REACT_APP_BASE_URL;
         const response = await axios.post(
-          "http://localhost:7777/user/profile",
+          `${apiUrl}/user/profile`,
           {
             username,
             password,
@@ -60,24 +61,6 @@ const PlanConfirmation = () => {
 
   
 
-  /*const checkDocumentVerification = async () => {
-    try {
-      console.log(userDetails.userId);
-      const userId=userDetails.userId;
-      // const response = await fetch(`http://localhost:7777/user/document/status?userId=${userId}`);
-      // const isVerified = await response.json();
-      const isVerified=userDetails.documentVerification;
-      setIsVerified(isVerified); 
-      console.log(isVerified);
-    } catch (error) {
-      console.error('Error checking document verification status:', error);
-    }
-  };
-
-  // Run the check when the component loads
-  useEffect(() => {
-    checkDocumentVerification();
-  }, []);*/
 
   
 

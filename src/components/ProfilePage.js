@@ -1,168 +1,3 @@
-/*import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import '../Styles/ProfilePage.css';  // Import the CSS
-import Navbar from './Navbar';
-
-function ProfilePage() {
-  const [userDetails, setUserDetails] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    localStorage.removeItem('user');
-    navigate('/'); // Redirect to homepage after logout
-};
-const handleSeePlans = () => {
-  navigate('/plans'); // Redirect to the Plans page
-};
-
-
-  const customerTypeMap = {
-    1: 'Personal',
-    2: 'Business',
-    3: 'Enterprise',
-    4: 'Government',
-  };
-
-  useEffect(() => {
-    const fetchUserDetails = async () => {
-      const username = localStorage.getItem('username');
-      const password = localStorage.getItem('password');
-      const userId = localStorage.getItem('userId');
-
-      if (!username || !password) {
-        navigate('/login');
-        return;
-      }
-
-      try {
-        const response = await axios.post('http://localhost:7777/user/profile', {
-          username,
-          password,
-        });
-
-        if (response.status === 200) {
-          setUserDetails(response.data);
-        } else {
-          setError('Failed to retrieve user details');
-        }
-      } catch (err) {
-        setError('Error occurred while fetching data');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchUserDetails();
-  }, [navigate]);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>{error}</p>;
-  }
-
-  return (
-    <div>
-      
-    <div className="profile-container">
-      {userDetails ? (
-        <>
-          <div className="profile-details">
-            <h2>Profile Details</h2>
-            <p><strong>Username:</strong> {userDetails.username}</p>
-            <p><strong>Phone:</strong> {userDetails.phone}</p>
-            <p>
-                <strong>Customer Type:</strong>{" "}
-                {customerTypeMap[userDetails.customerType]}
-              </p>
-
-          
-          <div className="verification-status">
-                {userDetails.document_verification ? (
-                  <>
-                    <p>
-                      Document Verified{" "}
-                      <span className="verification-icon">✔️</span>
-                    </p>
-                  </>
-                ) : (
-                  <>
-                    <p>
-                      Document yet to be Verified{" "}
-                      <span className="verification-icon">❌</span>
-                    </p>
-                  </>
-                )}
-              </div>
-            </div>
-  
-          <div className="user-plan">
-            <h3>Your Current Plan</h3>
-            {userDetails.plan_name ? (
-              <>
-                <p><strong>Plan Name:</strong> {userDetails.plan_name}</p>
-                <p><strong>Description:</strong> {userDetails.plan_description}</p>
-                <p><strong>Price:</strong> ${userDetails.price}</p>
-                <p><strong>Validity:</strong> {userDetails.validity_days} days</p>
-              </>
-            ) : (
-              <p className="no-plan-message">You currently have no active plans.</p>
-            )}
-            
-            <div className="verification-status">
-                {userDetails.plan_name && userDetails.document_verification ? (
-                  <p className="active-service">
-                    <strong>Service is Active</strong>
-                  </p>
-                ) : (
-                  <p className="inactive-service">
-                    <strong>Service is Not Active</strong>
-                  </p>
-                )}
-              </div>
-          </div>
-        </>
-      ) : (
-        <p>No profile data available.</p>
-      )}
-      <div className="buttons-container">
-          <button className="see-plans-button" onClick={handleSeePlans}>See Plans</button>
-          <Link to="/">
-            <button className="logout-button" onClick={handleLogout}>Log out</button>
-          </Link>
-        </div>
-      </div>
-      </div>
-  );
-}
-
-export default ProfilePage;
-
-*/
-
-//<div className={`profile-container ${otpPopupVisible || passwordPopupVisible ? "blurred" : ""}`}>
-
-// const handleUpdatePassword = async () => {
-//   console.log("in otp");
-//   setOtpPopupVisible(true); // Show OTP popup
-//   // Call API to send OTP
-//   try {
-//     const response = await axios.post(
-//       "http://localhost:7777/user/update-password",
-//       { username: userDetails.username } // Send the username instead of email
-//     );
-//     if (response.status === 200) {
-//       alert("OTP has been sent to your email");
-//     }
-//   } catch (error) {
-//     alert("Failed to send OTP");
-//   }
-// };
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -199,8 +34,9 @@ function ProfilePage() {
   const handleUpdatePassword = async () => {
     setOtpPopupVisible(true); // Show OTP popup
     try {
+      const apiUrl = process.env.REACT_APP_BASE_URL;
       const response = await axios.post(
-        "http://localhost:7777/user/update-password",
+        `${apiUrl}/user/update-password`,
         { username: userDetails.username } // Send the username instead of email
       );
       if (response.status === 200) {
@@ -213,8 +49,9 @@ function ProfilePage() {
 
   const handleOtpVerification = async () => {
     try {
+      const apiUrl = process.env.REACT_APP_BASE_URL;
       const response = await axios.post(
-        "http://localhost:7777/user/verify",
+        `${apiUrl}/user/verify`,
         { email: userDetails.email, otp: otp }
       );
       if (response.status === 200) {
@@ -250,8 +87,9 @@ function ProfilePage() {
 
     // Update password
     try {
+      const apiUrl = process.env.REACT_APP_BASE_URL;
       const response = await axios.post(
-        "http://localhost:7777/user/change-password",
+        `${apiUrl}/user/change-password`,
         { username: userDetails.username, newPassword: password }
       );
       if (response.status === 200) {
@@ -276,8 +114,9 @@ function ProfilePage() {
       }
 
       try {
+        const apiUrl = process.env.REACT_APP_BASE_URL;
         const response = await axios.post(
-          "http://localhost:7777/user/profile",
+          `${apiUrl}/user/profile`,
           { username, password }
         );
         if (response.status === 200) {

@@ -82,7 +82,3 @@ const PlanCarousel = () => {
 export default PlanCarousel;
 
 
-//"https://images.pexels.com/photos/4909462/pexels-photo-4909462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-//"https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-//"https://images.pexels.com/photos/5685937/pexels-photo-5685937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-//"https://images.pexels.com/photos/4145153/pexels-photo-4145153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
